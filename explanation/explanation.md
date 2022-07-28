@@ -14,3 +14,16 @@ ZeroCho 강의 중 설명한 것들 기록
 3. Redux Store에 담는 거랑 Local State에 담는거랑 리소스 먹는 차이가 있나?
     깊은 복사가 아니라 얕은 복사여서 이전 것을 참조이기 때문에 생각보다 메모리를 먹지 않음(nextState끼리 서로 연결된 경우)
     메모리가 부족하다면 불변셩을 유지하기 위해 깊은 복사를 했을 수도 있음
+4. initialState의 안에 있는 속성들이 action을 분류하는 기준이 될 수도 있음
+    ex)
+        const initialState = {
+            user : null, //action
+            posts : [], //action
+            comment : [], //action
+            favorites : [], //action
+            history : [], //action
+            likes: [], //action
+            follwers:[] //action
+        }
+5. 전체 페이지에 대한 게시글(데이터)를 State에 가져와야하는건지  한 페이지에 대한 게시글(데이터)를 State에 가져와야 하는건 지
+    한 페이지에 대해서 가져오는게 좋음(한 눈에 보이는 정도만), 서비스 마다 다름
