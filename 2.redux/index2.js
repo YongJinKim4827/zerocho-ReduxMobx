@@ -4,8 +4,16 @@ const { login, logOut } = require('./actions/user');
 const { addPost } = require('./actions/post');
 
 const initialStore = {
-    user : null,
-    posts : []
+    user : {
+        isLogging : true,
+        data : null
+    },
+    posts : [],
+    comment : [],
+    favorites : [],
+    history : [],
+    likes: [],
+    follwers:[]
 }
 
 const store = createStore(reducer, initialStore);
